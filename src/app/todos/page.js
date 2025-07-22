@@ -1,22 +1,24 @@
-import { addTodo } from "@/action/todos";
+import ListItem from "@/components/TodoList";
 import TodoForm from "@/components/TodoForm";
 import Link from "next/link";
+import TodoList from "@/components/TodoList";
 
-export default async function Todos() {   
-    let res = await fetch("http://localhost:3000/api/todos", {cache: "no-cache"});
-    res =  await res.json();
+export default async function Todos() {
+  let res = await fetch("http://localhost:3000/api/todos", {
+    // cache: "no-cache",
+  });
+  res = await res.json();
 
   return (
-    <div className="min-h-screen p-10 bg-gray-600"> 
-
-      <h1 className="text-5xl text-center font-bold text-white">Todos</h1> <br />
+    <div className="min-h-screen p-10">
+      <h1 className="text-3xl text-center font-bold ">Todos</h1>
       <TodoForm />
+
       {res.data?.map((todo) => (
-        <Link key={todo.id} href={`/todos/${todo.id}`} className=" min-h-auto p-4 rounded shadow-md mb-4">
-          <h2 className="text-2xl border p-2 text-center   font-red">{todo.title}</h2>
-        </Link>
+        // <ListItem todo={todo} key={todo.id} />
+      <TodoList todo={todo} key={todo.id} />
+
       ))}
     </div>
-
   );
 }
