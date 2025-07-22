@@ -3,7 +3,7 @@ import TodoForm from "@/components/TodoForm";
 import Link from "next/link";
 
 export default async function Todos() {   
-    let res = await fetch("http://localhost:3001/api/todos", {cache: "no-cache"});
+    let res = await fetch("http://localhost:3000/api/todos", {cache: "no-cache"});
     res =  await res.json();
 
   return (
