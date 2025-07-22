@@ -16,7 +16,7 @@ export default async function Todos() {
 
       {res.data?.map((todo) => (
         // <ListItem todo={todo} key={todo.id} />
-      <TodoList todo={todo} key={todo.id} />
+        <TodoList todo={todo} key={todo.id} />
 
       ))}
     </div>
