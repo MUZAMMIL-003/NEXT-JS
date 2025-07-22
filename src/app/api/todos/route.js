@@ -28,6 +28,7 @@ export async function GET(request) {
   });
 }
 
+
 export async function POST(request) {
   const data = await request.json();
   const obj = {
