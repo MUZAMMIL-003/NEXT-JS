@@ -39,6 +39,7 @@ export async function updateTodo(obj) {
     }
 }
 
+
 export async function deleteTodo(obj) {
     try {
         await fetch("http://localhost:3000/api/todos", {
