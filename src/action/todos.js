@@ -21,6 +21,7 @@ export async function addTodo(formData) {
     }
 }
 
+
 export async function updateTodo(obj) {
     console.log("obj==in update todo=>", obj);
     try {
